@@ -4,7 +4,7 @@ import { Controller } from 'react-hook-form'
 
 function Selector({label, name, control, options}) {
   return (
-    <FormControl size="small" fullWidth>
+    <FormControl margin="normal" size="small" fullWidth>
         <InputLabel>{label}</InputLabel>
         <Controller
             name={name}
@@ -12,7 +12,7 @@ function Selector({label, name, control, options}) {
             render={({ field: { onChange, value }, fieldState: { error } }) => {
                     return (<>  
                        
-                        <Select onChange={onChange} value={value} >
+                        <Select sx={{p:1}} error={!!error} onChange={onChange} value={value} >
                         {
                             options.map((option)=>{
                                 return(
